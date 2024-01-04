@@ -6,7 +6,7 @@
         {
             "type": "cppdbg",
             "name": "Somnath Cross-Debugging 3",
-            "program": "${workspaceFolder}/Binaries/ECGTestUtility",
+            "program": "${workspaceFolder}/Binaries/PHMApplication",
             "request": "launch",
             "miDebuggerPath": "/usr/bin/gdb-multiarch", 
             "miDebuggerServerAddress": "tempus:9999", 
@@ -19,7 +19,7 @@
                     "ignoreFailures": true
                 },
                 {
-                    "description": "Set sysroot",
+                    "description": "Set sysroot for faster symbol loading",
                     "text": "set sysroot /opt/fsl-imx-x11/5.4-zeus/sysroots/cortexa9hf-neon-poky-linux-gnueabi",
                     "ignoreFailures": true
                 }

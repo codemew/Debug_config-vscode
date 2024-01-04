@@ -22,10 +22,26 @@
         "command": "ssh",
         "args": [
           "root@tempus",
-          "export",
-          "LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/root/ ;",
-          "gdbserver :9999 /home/root/ECGTestUtility",
-          "silent 1"
+          "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/root/PHM/Binaries ;",
+          "export QT_FONT_DPI=60 ;",
+          "gdbserver :9999 /home/root/PHM/Binaries/PHMApplication"
+        ],
+        "group": {
+          "kind": "test",
+          "isDefault": true
+        },
+        //"dependsOn":["Deploy via Rsync"],
+        "problemMatcher": []
+      },
+      {
+        "label": "Deploy via Rsync",
+        "type": "shell",
+        "command": "rsync",
+        "args": [
+          "-avz",
+          "-e ssh",
+          "${workspaceFolder}/Binaries/",       //source      directory
+          "root@tempus:/home/root/Bin"          //destination directory
         ],
         "group": {
           "kind": "test",
