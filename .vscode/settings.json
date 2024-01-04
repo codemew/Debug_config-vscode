@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "iostream": "cpp",
+        "list": "cpp",
+        "qqueue": "cpp",
+        "charconv": "cpp"
+    }
+}

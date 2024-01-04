@@ -1,0 +1,30 @@
+{
+    // Dont use for Desktop builds : only use with CMake Cross-Compile Builds
+    // ECGTESTApp Debug Config : /home/somnath/Babel_project_cmake_port/
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "cppdbg",
+            "name": "Somnath Cross-Debugging 3",
+            "program": "${workspaceFolder}/Binaries/ECGTestUtility",
+            "request": "launch",
+            "miDebuggerPath": "/usr/bin/gdb-multiarch", 
+            "miDebuggerServerAddress": "tempus:9999", 
+            "cwd": "${workspaceFolder}/Binaries",
+            "targetArchitecture": "arm", 
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set sysroot",
+                    "text": "set sysroot /opt/fsl-imx-x11/5.4-zeus/sysroots/cortexa9hf-neon-poky-linux-gnueabi",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+
+    ]
+}

@@ -1,0 +1,39 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Deploy and Debug",
+        "type": "shell",
+        "command": "scp",
+        "args": [
+          "-r",
+          "${workspaceFolder}/Binaries/*",
+          "root@tempus:/home/root/"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "Run GDBServer",
+        "type": "shell",
+        "command": "ssh",
+        "args": [
+          "root@tempus",
+          "export",
+          "LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/root/ ;",
+          "gdbserver :9999 /home/root/ECGTestUtility",
+          "silent 1"
+        ],
+        "group": {
+          "kind": "test",
+          "isDefault": true
+        },
+        "problemMatcher": []
+      }
+      
+    ]
+  }
+  
